@@ -1,0 +1,100 @@
+{
+  "past": [
+    {
+      "id": 0,
+      "deliveries": "Box",
+      "avgPickT": "10 Min",
+      "avgDropT": "30 Min",
+      "avgDist": "10 Km",
+      "avgCost": "25"
+    },
+    {
+      "id": 1,
+      "deliveries": "mail",
+      "avgPickT": "25 Min",
+      "avgDropT": "45 Min",
+      "avgDist": "45 Km",
+      "avgCost": "61"
+    },
+    {
+      "id": 2,
+      "deliveries": "package",
+      "avgPickT": "60 Min",
+      "avgDropT": "120 Min",
+      "avgDist": "20 Km",
+      "avgCost": "100"
+    }
+  ],
+  "drafts": [
+    {
+      "id": 0,
+      "pickup": "alex",
+      "dropoff": "cairo",
+      "order": "15714252"
+    },
+    {
+      "id": 1,
+      "pickup": "cairo",
+      "dropoff": "alex",
+      "order": "542687655"
+    },
+    {
+      "pickup": null,
+      "order": null,
+      "dropoff": "Egypt",
+      "id": 2
+    },
+    {
+      "pickup": null,
+      "order": null,
+      "dropoff": "Egypt",
+      "id": 3
+    }
+  ],
+  "active": [
+    {
+      "id": 0,
+      "status": "in process",
+      "pickup": "alex",
+      "dropoff": "cairo",
+      "courier": "dhl"
+    },
+    {
+      "id": 1,
+      "status": "in process",
+      "pickup": "egypt",
+      "dropoff": "lativa",
+      "courier": "fedex"
+    }
+  ],
+  "order": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "firstName": "Tamer",
+      "dateTime": "2017-10-10T22:30:00Z",
+      "id": 3
+    },
+    {
+      "firstName": "Tamer",
+      "lastName": "Hussien",
+      "businessname": "Zeew app",
+      "address": "Lativa",
+      "phoneNum": "9796545846697",
+      "email": "Hshhvsjsk",
+      "specialInst": "Ggshjaj",
+      "letter": "1",
+      "small": "2",
+      "large": "3",
+      "orderId": "887566435",
+      "memo": "Ggvsksjshbsb",
+      "periority": "ASAP",
+      "dateTime": "2017-01-01T13:00:00Z",
+      "id": 4
+    }
+  ]
+}

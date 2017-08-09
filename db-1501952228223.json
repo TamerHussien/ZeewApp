@@ -1,0 +1,95 @@
+{
+  "past": [
+    {
+      "id": 0,
+      "deliveries": "Box",
+      "avgPickT": "10 Min",
+      "avgDropT": "30 Min",
+      "avgDist": "10 Km",
+      "avgCost": "25"
+    },
+    {
+      "id": 1,
+      "deliveries": "mail",
+      "avgPickT": "25 Min",
+      "avgDropT": "45 Min",
+      "avgDist": "45 Km",
+      "avgCost": "61"
+    },
+    {
+      "id": 2,
+      "deliveries": "package",
+      "avgPickT": "60 Min",
+      "avgDropT": "120 Min",
+      "avgDist": "20 Km",
+      "avgCost": "100"
+    }
+  ],
+  "drafts": [
+    {
+      "id": 0,
+      "pickup": "alex",
+      "dropoff": "cairo",
+      "order": "15714252"
+    },
+    {
+      "id": 1,
+      "pickup": "cairo",
+      "dropoff": "alex",
+      "order": "542687655"
+    },
+    {
+      "dropoff": "Egypt",
+      "id": 2
+    },
+    {
+      "dropoff": "Egypt",
+      "id": 3
+    },
+    {
+      "dropoff": "Egypt",
+      "id": 4
+    },
+    {
+      "dropoff": "Egypt",
+      "id": 5
+    },
+    {
+      "dropoff": "Egypt",
+      "id": 6
+    },
+    {
+      "dropoff": "Egypt",
+      "id": 7
+    },
+    {
+      "pickup": null,
+      "order": null,
+      "dropoff": "Egypt",
+      "id": 8
+    },
+    {
+      "pickup": null,
+      "order": null,
+      "dropoff": "Egypt",
+      "id": 9
+    }
+  ],
+  "active": [
+    {
+      "id": 0,
+      "status": "in process",
+      "pickup": "alex",
+      "dropoff": "cairo",
+      "courier": "dhl"
+    },
+    {
+      "id": 1,
+      "status": "in process",
+      "pickup": "egypt",
+      "dropoff": "lativa",
+      "courier": "fedex"
+    }
+  ],
+  "order": []
+}

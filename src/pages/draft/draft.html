@@ -1,0 +1,46 @@
+<!--
+  Generated template for the DraftPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Draft</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-card>
+        <ion-card-content>
+            <ion-card-title color="primary-light">
+                <strong>DRAFTS </strong>
+            </ion-card-title>
+            <ion-row *ngFor="let a of draft">
+                <ion-col>
+                    PICKUP <br> {{a.pickup}}
+                </ion-col>
+                <ion-col>
+                    DROPOFF <br> {{a.dropoff}}
+                </ion-col>
+                <ion-col>
+                    ORDER <br> {{a.order}}
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+    <div [hidden]="draft || draftErrMess" text-center>
+        <ion-spinner></ion-spinner>
+        <h4>Loading...Please Wait</h4>
+    </div>
+    <div *ngIf="draftErrMess">
+        <h2>Error</h2>
+        <h4>{{draftErrMess}}</h4>
+    </div>
+</ion-content>
