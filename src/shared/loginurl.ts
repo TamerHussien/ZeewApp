@@ -1,0 +1,1 @@
+export const loginURL = 'http://api.zeew.eu:8081/business/login';

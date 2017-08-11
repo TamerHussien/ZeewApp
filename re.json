@@ -1,0 +1,20 @@
+{
+    "businessEntity": {
+        "address": {
+            "country": "Latvia",
+            "latitude": 56.955471,
+            "longitude": 24.153497900000048,
+            "locality": "Rīga",
+            "postal_code": "LV-1009",
+            "route": "Pērnavas iela",
+            "street_number": "39"
+        },
+        "businessName": "Ciprian Khlud",
+        "email": "ciprian.mustiata@yahoo.com",
+        "phone": "",
+        "website": "none"
+    },
+    "guid": "861be083-1066-4210-b4ae-126ec9c98efc",
+    "isError": false,
+    "message": null
+}

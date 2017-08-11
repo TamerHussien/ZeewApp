@@ -19,11 +19,15 @@ export class HomePage implements OnInit {
   orders: Order[];
   orderErrMess: string;
   myForm: FormGroup;
-
+  public Details : object;
   userInfo = new Order();
   draft = new Draft();
-  constructor(private alertCtrl: AlertController,public formBuilder: FormBuilder,public navCtrl: NavController,private orderservice: OrderProvider,private draftservice: DraftProvider) {
-
+  constructor(private alertCtrl: AlertController,public formBuilder: FormBuilder,public navCtrl: NavController,
+    private orderservice: OrderProvider,private draftservice: DraftProvider,
+  ) {
+    const data = JSON.parse(localStorage.getItem('userData'));
+    this.Details = data.userData;
+    
   }
 
   GoogleMap(){
@@ -62,7 +66,6 @@ this.myForm = this.formBuilder.group({
 });
    
   this.GoogleMap();
-
 }
 onSubmit(){
   this.orderservice.addOrder(this.userInfo)

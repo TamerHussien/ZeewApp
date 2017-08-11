@@ -20,6 +20,7 @@ import { PastProvider } from '../providers/past/past';
 import { ProcessHttpmsgProvider } from '../providers/process-httpmsg/process-httpmsg';
 import { baseURL } from '../shared/baseurl';
 import { OrderProvider } from '../providers/order/order';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,8 @@ import { OrderProvider } from '../providers/order/order';
     ProcessHttpmsgProvider,
     { provide: 'BaseURL', useValue: baseURL },
     OrderProvider,
+    AuthServiceProvider,
+    
   ]
 })
 export class AppModule {}

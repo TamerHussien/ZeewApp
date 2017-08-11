@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
 import {FormGroup, FormBuilder,Validators} from "@angular/forms";
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { HomePage } from '../home/home'
+
 import { Storage } from '@ionic/storage';
 import { User } from '../../shared/user';
 
@@ -17,33 +20,25 @@ import { User } from '../../shared/user';
 export class LoginPage {
 
   loginForm : FormGroup;
+  responseData:any;
 
-  user : User = {username:'', password:''};
+  user : User = {email:'', password:''};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     private viewCtrl: ViewController,
     private formBuilder: FormBuilder,
-    private storage: Storage) {
-
+    private storage: Storage,
+    public auth : AuthServiceProvider
+ ) {}
+ngOnInit(){
       this.loginForm = this.formBuilder.group({
-        username : ['', Validators.required],
+        email : ['', Validators.required],
         password:  ['', Validators.required],
         remember: true
       });
-
-      storage.get('user').then(user =>{
-        if (user){
-          this.user = user;
-          this.loginForm
-            .patchValue({
-              'username': this.user.username, 
-              'password': this.user.password 
-            });
-        }
-          else
-          console.log('user not defined');
-      });
+      
   }
+ 
 
 
   ionViewDidLoad() {
@@ -52,17 +47,22 @@ export class LoginPage {
  dismiss(){
    this.viewCtrl.dismiss();
  }
-  onsubmit(){
-    this.user.username = this.loginForm.get('username').value;
+
+ signIn(){
+   
+this.auth.postData(this.user, '/business/login').then(res=>{
+  this.responseData = res;
+  console.log(this.responseData);
+  localStorage.setItem('userData', JSON.stringify(this.responseData));
+})
+
+ }
+  onSubmit(){
+    
+    this.user.email = this.loginForm.get('email').value;
     this.user.password= this.loginForm.get('password').value;
-
-    if (this.loginForm.get('remember').value){
-
-      this.storage.set('user', this.user);
-    }
-    else{
-      this.storage.remove('user');
-    }
-    this.viewCtrl.dismiss();
+    this.signIn();
+    this.loginForm.reset();
+    this.navCtrl.popTo(HomePage);
   }
 }

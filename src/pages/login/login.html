@@ -21,18 +21,18 @@
 
 
 <ion-content padding>
-    <form [formGroup]="loginForm" ngSubmit="onSubmit()">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <ion-item>
             <ion-label floating>Username</ion-label>
-            <ion-input type="text" formControlName="username"></ion-input>
+            <ion-input type="text" [(ngModel)]="loginForm.email" formControlName="email"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label floating>Password</ion-label>
-            <ion-input type="password" formControlName="password"></ion-input>
+            <ion-input type="password" [(ngModel)]="loginForm.password" formControlName="password"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label>Remember Me</ion-label>
-            <ion-checkbox color="primary" formControlName="remember" checked="true"></ion-checkbox>
+            <ion-checkbox color="primary" [(ngModel)]="loginForm.password" formControlName="remember" checked="true"></ion-checkbox>
         </ion-item>
         <button ion-button type="submit" [disabled]="!loginForm.valid"> Login</button>
     </form>
