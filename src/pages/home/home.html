@@ -1,49 +1,59 @@
 <ion-header>
     <ion-navbar color="primary">
         <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
+      <ion-icon name="menu" ></ion-icon>
     </button>
         <ion-title>Order</ion-title>
     </ion-navbar>
 </ion-header>
 <ion-content>
-    <div id="map" padding margin></div>
-
+    <!-- <div id="map" padding margin></div> -->
+    <div margin>
+        Welcome {{Details.businessEntity.businessName}}
+    </div>
+    <div margin>
+        Your Location is {{Details.businessEntity.address.country}} {{Details.businessEntity.address.locality}}
+    </div>
     <ion-list>
         <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
             <ion-item>
                 <ion-label floating><strong>First Name</strong> </ion-label>
-                <ion-input [(ngModel)]="userInfo.firstName" formControlName="firstName" type="text" id="firstName">
+                <ion-input [(ngModel)]="myForm.firstName" formControlName="firstName" type="text" id="firstName">
                 </ion-input>
             </ion-item>
             <ion-item>
                 <ion-label floating><strong>Last Name</strong> </ion-label>
-                <ion-input [(ngModel)]="userInfo.lastName" formControlName="lastName" type="text" id="lastName">
+                <ion-input [(ngModel)]="myForm.lastName" formControlName="lastName" type="text" id="lastName">
                 </ion-input>
             </ion-item>
             <ion-item>
                 <ion-label floating><strong>Business Name</strong> </ion-label>
-                <ion-input [(ngModel)]="userInfo.businessname" formControlName="businessname" type="text" id="businessname">
+                <ion-input [(ngModel)]="myForm.businessname" formControlName="businessname" type="text" id="businessname">
                 </ion-input>
             </ion-item>
             <ion-item>
                 <ion-label floating><strong>Address</strong> </ion-label>
-                <ion-input [(ngModel)]="userInfo.address" formControlName="address" type="text" id="address">
+                <ion-input [(ngModel)]="myForm.address" formControlName="address" type="text" id="address">
+                </ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating><strong>APT NO/BUILDING</strong> </ion-label>
+                <ion-input [(ngModel)]="myForm.apt_no" formControlName="apt_no" type="number" id="apt_no" min="0">
                 </ion-input>
             </ion-item>
             <ion-item>
                 <ion-label floating><strong>Phone</strong> </ion-label>
-                <ion-input [(ngModel)]="userInfo.phoneNum" formControlName="phoneNum" type="text" id="phoneNum">
+                <ion-input [(ngModel)]="myForm.phoneNum" formControlName="phoneNum" type="text" id="phoneNum">
                 </ion-input>
             </ion-item>
             <ion-item>
                 <ion-label floating><strong>E-mail</strong> </ion-label>
-                <ion-input [(ngModel)]="userInfo.email" formControlName="email" type="text" id="email">
+                <ion-input [(ngModel)]="myForm.email" formControlName="email" type="text" id="email">
                 </ion-input>
             </ion-item>
             <ion-item>
                 <ion-label floating><strong>Special Instruction</strong> </ion-label>
-                <ion-textarea [(ngModel)]="userInfo.specialInst" formControlName="specialInst" type="text" id="specialInst">
+                <ion-textarea [(ngModel)]="myForm.specialInst" formControlName="specialInst" type="text" id="specialInst">
                 </ion-textarea>
             </ion-item>
             <hr>
@@ -51,40 +61,48 @@
             <hr>
             <ion-item>
                 <ion-label floating><strong>Letter/Envelop</strong> </ion-label>
-                <ion-input [(ngModel)]="userInfo.letter" formControlName="letter" type="number" id="letter" min="0">
+                <ion-input [(ngModel)]="myForm.letter" formControlName="letter" type="number" id="letter" min="0">
                 </ion-input>
             </ion-item>
             <ion-item>
                 <ion-label floating><strong>Small/Medium</strong> </ion-label>
-                <ion-input [(ngModel)]="userInfo.small" formControlName="small" type="number" id="small" min="0">
+                <ion-input [(ngModel)]="myForm.small" formControlName="small" type="number" id="small" min="0">
                 </ion-input>
             </ion-item>
             <ion-item>
                 <ion-label floating><strong>Large</strong> </ion-label>
-                <ion-input [(ngModel)]="userInfo.large" formControlName="large" type="number" id="large" min="0">
+                <ion-input [(ngModel)]="myForm.large" formControlName="large" type="number" id="large" min="0">
                 </ion-input>
             </ion-item>
             <ion-item>
                 <ion-label floating><strong>Order Id</strong> </ion-label>
-                <ion-input [(ngModel)]="userInfo.orderId" formControlName="orderId" type="number" id="orderId" min="0">
+                <ion-input [(ngModel)]="myForm.orderId" formControlName="orderId" type="number" id="orderId" min="0">
                 </ion-input>
             </ion-item>
             <ion-item>
                 <ion-label floating><strong>Memo</strong> </ion-label>
-                <ion-input [(ngModel)]="userInfo.memo" formControlName="memo" type="text" id="memo">
+                <ion-input [(ngModel)]="myForm.memo" formControlName="memo" type="text" id="memo">
                 </ion-input>
             </ion-item>
 
             <ion-item>
                 <ion-label><strong>Periority</strong></ion-label>
-                <ion-select formControlName="periority" [(ngModel)]="userInfo.periority">
+                <ion-select formControlName="periority" [(ngModel)]="myForm.periority">
                     <ion-option value='ASAP'>ASAP</ion-option>
                     <ion-option value='later'>Later</ion-option>
                 </ion-select>
             </ion-item>
             <ion-item>
-                <ion-label floating><strong>Date and Time</strong></ion-label>
-                <ion-datetime displayFormat="MMM DD, YYYY hh:mm A" pickerFormat="MMM DD, YYYY hh:mm A" formControlName="dateTime" [(ngModel)]="userInfo.dateTime"></ion-datetime>
+                <ion-label floating><strong>Date</strong></ion-label>
+                <ion-datetime displayFormat="MMM DD, YYYY" pickerFormat="MMM DD, YYYY" formControlName="Date" [(ngModel)]="myForm.Date"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label floating><strong>Time</strong></ion-label>
+                <ion-datetime displayFormat="hh A" pickerFormat="hh A" formControlName="Time" [(ngModel)]="myForm.Time"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label floating><strong>Minutes</strong></ion-label>
+                <ion-datetime displayFormat="mm" pickerFormat="mm" formControlName="minute" [(ngModel)]="myForm.minute"></ion-datetime>
             </ion-item>
             <button color="primary-blue" type="submit" ion-button>Submit</button>
         </form>
